@@ -1,0 +1,355 @@
+<h2 class="text-2xl font-bold text-blue-700 mb-6">
+  CHƯƠNG II. NGHIỆP VỤ CÔNG TÁC VẬN HÀNH ETC
+</h2>
+
+<!-- 1 -->
+<h3 class="text-xl font-semibold mt-6 mb-3">
+  1. Một số lưu ý khi điều hành giao thông làn ETC
+</h3>
+
+<ul class="list-disc pl-6 space-y-2">
+  <li>
+    Cố gắng đảm bảo chỉ cho các xe có dán thẻ VETC đi làn ETC trừ các trường hợp
+    đặc biệt.
+  </li>
+
+  <li>Giữ ổn định vận tốc xe qua làn từ <b>30 – 40 km/h</b>.</li>
+
+  <li>Đảm bảo khoảng cách giữa các xe tối thiểu <b>02 mét</b>.</li>
+
+  <li>
+    Khi xử lý các tình huống lỗi không để xe có thẻ VETC lùi, tiến trong làn
+    ETC. Trường hợp đặc biệt phải lùi xe cần đảm bảo xe đã cán qua
+    <b>loop 0</b> và vùng nhận diện của <b>sick</b> trước khi lùi.
+  </li>
+</ul>
+
+<!-- 2 -->
+<h3 class="text-xl font-semibold mt-8 mb-3">
+  2. Một số động tác điều khiển giao thông cần lưu ý
+</h3>
+
+<table class="w-full border border-gray-300 text-sm mb-8">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border p-2 w-40">Động tác</th>
+      <th class="border p-2">Ý nghĩa</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="border p-3 text-center">
+        <img src="../asset/image/img-docs/image.png" alt="image" />
+      </td>
+
+      <td class="border p-3">
+        - Các phương tiện dừng lại<br />
+        Mô tả: NVKTVH
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-3 text-center">
+        <img src="../asset/image/img-docs/image2.png" alt="image" />
+      </td>
+
+      <td class="border p-3">Các phương tiện đi chậm lại</td>
+    </tr>
+
+    <tr>
+      <td class="border p-3 text-center">
+        <img src="../asset/image/img-docs/image3.png" alt="image" />
+      </td>
+
+      <td class="border p-3">Chuyển làn phương tiện</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 3 -->
+
+<h3 class="text-xl font-semibold mt-6 mb-3">3. Nghiệp vụ xử lý lỗi vận hành</h3>
+
+<table class="w-full border border-gray-300 text-sm">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border p-2">STT</th>
+      <th class="border p-2">Tình huống</th>
+      <th class="border p-2">Hướng dẫn xử lý</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="border p-2">1</td>
+      <td class="border p-2">Lỗi dư xe ảo</td>
+      <td class="border p-2">
+        - Quan sát hàng đợi trên màn hình thu phí, xử dụng tổ hợp phím “Ctrl+R’’
+        để xóa xe ảo.<br />
+        - Lưu ý chỉ áp dụng khi xác định chính xác, nếu không có thể gây hiện
+        tượng xóa nhầm phải xe đang đỗ tại cabine, nếu đồng thời có xe ETC hợp
+        lệ vào làn thì hệ thống sẽ tự động mở barrie nên có thể gây thất thoát.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">2</td>
+      <td class="border p-2">Xe qua làn barrie không tự đóng</td>
+      <td class="border p-2">
+        - Lỗi do dư xe ảo &rarr; ấn “Ctrl+R’’ để xóa xe ảo.<br />
+        - Do barrier bị đơ &rarr; Thao tác phím “0 + Enter” hoặc phím “Đóng
+        barie” trên bàn điều khiển thủ công để đóng cưỡng bức barrier (để thao
+        tác trên bàn điều khiển thủ công trước tiên cần vặn khóa trên bàn điều
+        khiển sang chế độ thủ công, khi thao tác đóng barie xong cần chuyển sang
+        chế độ tự động. Chú ý quan sát hiển thị trạng thái Barrier trên màn hình
+        và trạng thái thực tế).<br />
+        <img src="../asset/image/img-docs/image4.png" alt="image" />
+        <br />
+        <img src="../asset/image/img-docs/image5.png" alt="image" />
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">3</td>
+      <td class="border p-2">Xe đủ điều kiện nhưng không qua được trạm</td>
+      <td class="border p-2">
+        - Kiểm tra lỗi dư xe ảo &rarr; ấn “Ctrl+R’’ để xóa xe ảo.<br />
+        - Kiểm tra việc mất sick, reader &rarr; Kiểm tra đường nguồn và đường
+        tín hiệu cấp cho sick, reader, khởi động lại sick, reader, phần mềm thu
+        phí.<br />
+        - Kiểm tra etag có bị gắn sai hay trên xe có 2 etag<br />
+        - Kiểm tra thẻ bằng đầu đọc cầm tay.<br />
+        - Kiểm tra thẻ trong log sick, reader.<br />
+        - Thông báo cho bộ phận NOC nhờ hỗ trợ.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">4</td>
+      <td class="border p-2">
+        2 xe ô tô chạy sát nhau (1 MTC, 1 ETC), xe MTC chạy trước, ETC chạy sau.
+        1 giao dịch &rarr; 2 xe đi qua trạm.
+      </td>
+      <td class="border p-2">
+        - Điều phối xe MTC đi đúng làn khi qua trạm.<br />
+        - Yêu cầu các xe giữa khoảng cách 2 mét trở lên.<br />
+        - Yêu cầu xe phải dừng tại cabin nếu có xe phía trước, chờ xe phía trước
+        đi qua barrier mới được phép đi tiếp.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">5</td>
+      <td class="border p-2">
+        2 xe ô tô ETC chạy sát nhau, hệ thống không đếm tách được xe dẫn tới
+        việc đóng barie, gây sự cố.
+      </td>
+      <td class="border p-2">
+        - Kiểm tra lại trạng thái hoạt động của sick.<br />
+        - Yêu cầu các xe giữ khoảng cách 2 mét trở lên.<br />
+        - Yêu cầu xe phải dừng tại cabin nếu có xe phía trước, chờ xe phía trước
+        đi qua barrier mới được phép đi tiếp.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">6</td>
+      <td class="border p-2">
+        Không có xe qua nhưng Barrie vẫn mở (chú ý gộp trường hợp này với chéo
+        làn)
+      </td>
+      <td class="border p-2">
+        - Do xe đi vào là xe chở xăng dầu, dài… nên gây nhiễu cảm biến tại
+        barrier. Khi barrier đóng xuống có tín hiệu nhiễu ở cảm biến nên mở lại
+        để đảm bảo an toàn cho người/xe.<br />
+        - Do dư xe trên hàng đợi &rarr; ấn “Ctrl+R’’ để xóa xe dư.<br />
+        - Ghi sổ nhật ký vận hành.<br />
+        - Thao tác phím “0 + Enter” hoặc phím đóng trên bàn điều khiển thủ công
+        để đóng cưỡng bức barrier.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">7</td>
+      <td class="border p-2">
+        Hệ thống ghi ghi nhận giao dịch đã thành công nhưng barrie không mở
+      </td>
+      <td class="border p-2">
+        - Xem có dư xe trên hàng chờ thì thao tác xóa xe dư.<br />
+        - Dùng phím cứng mở cho barrier cho xe qua.<br />
+        - Nếu dùng phím cứng mà barrier vẫn k mở thì bẻ cần barrier cho xe
+        qua.<br />
+        - Đóng làn kiểm tra PLC, relay, barrier.<br />
+        - Thông báo cho bộ phận NOC nhờ hỗ trợ.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">8</td>
+      <td class="border p-2">
+        Ghi nhận giao dịch barie mở, xe chưa kịp qua thì barie đóng xuống đột
+        ngột
+      </td>
+      <td class="border p-2">
+        - Xe liền trước kéo nháy loop nhận diện xe tại barrie, hệ thống hiểu là
+        có 02 xe đã qua barrie.<br />
+        - Thao tác phím “0 + Enter” hoặc phím đóng trên bàn điều khiển thủ công
+        để đóng cưỡng bức barrier.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">9</td>
+      <td class="border p-2">Lỗi xe sau mở xe trước</td>
+      <td class="border p-2">
+        - Vận hành điều phối xe đứng đúng vị trí tại vòng từ cabin nếu barrier
+        không mở.<br />
+        - Xe đến vòng từ barrier vận hành dừng xe không được cho xe lùi lại vì
+        khi đó hệ thống sẽ hiểu là xe đã đi qua và xóa queue, xe sau hợp lệ đi
+        vào làn barrier sẽ mở.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- 4 -->
+
+<h3 class="text-xl font-semibold mt-8 mb-3">
+  4. Xử lý một số tình huống đặc biệt
+</h3>
+
+<table class="w-full border border-gray-300 text-sm">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border p-2">STT</th>
+      <th class="border p-2">Tình huống</th>
+      <th class="border p-2">Cách xử lý</th>
+      <th class="border p-2">Thực tế triển khai hiện trường</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="border p-2">1</td>
+      <td class="border p-2">
+        Trường hợp xe chưa dán thẻ đã đi vào làn, xe đông không cho xe lùi lại
+        được
+      </td>
+      <td class="border p-2">
+        - Tại đầu vào: Nhân viên vận hành yêu cầu khách hàng cung cấp giấy tờ để
+        dán thẻ và hướng dẫn KH ra điểm dán thẻ để dán thẻ. KH dán thẻ nạp tiền
+        xong thì trả lại giấy tờ xe cho KH đồng thời báo lên nhóm vận hành BKS
+        thông tin đầu vào để đầu ra tạo OTC.<br />
+        (Trường hợp KH không đồng ý thông báo C08 xử phạt, hàng tuần tổng hợp
+        gửi công văn đính kèm biên bản cho C08 xử phạt)<br />
+        - Tại đầu ra: Nhân viên vận hành lập BB xe chưa dán thẻ đi vào cao tốc
+        giữ lại đăng ký hoặc đăng kiểm của khách hàng tại cabin, hướng dẫn KH ra
+        điểm dán thẻ để dán thẻ nạp tiền trừ OTC. Sau khi khách hàng dán thẻ
+        xong thì trả lại đăng ký hoặc đăng kiểm đã giữ của KH tại cabin.( Nhân
+        viên chỉ giữ giấy tờ của KH để đảm bảo KH có dán thẻ, ko thực hiện việc
+        giữ tiền đặt cọc của KH)
+      </td>
+      <td class="border p-2"></td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">2</td>
+      <td class="border p-2">Trường hợp KH chuyển tiền vào TKGT bị lỗi</td>
+      <td class="border p-2">
+        - Đơn vị vận hành chuẩn bị phiếu thu tiền mặt.<br />
+        - NVVH nhận đúng số tiền bằng mệnh giá khách hàng phải trả cho lộ trình
+        tương ứng, đồng thời trả cho khách hàng phiếu thu thể hiện đúng nội dung
+        BKS số tiền thu của KH và trả cho KH.<br />
+        - Ghi nhận lại thông tin thu tiền mặt vào sổ nhật ký vận hành, cuối ca
+        nộp tiền về cho NV Đối soát<br />
+        - NV đối soát lập biên bản thu tiền mặt theo mẫu “ BM.09-BCCT xe qua
+        tram thu tiền mặt” trong quá trình đối soát và chuyển tiền ( Đính kèm)
+        đồng thời gửi danh sách thu tiền mặt cho đầu mối phụ trách kinh doanh
+        thu/nộp tiền của tầng tuyến. Đầu mối phụ trách kinh doanh thu/nộp tiền
+        của từng tuyến sẽ thực hiện nộp tiền vào TKGT theo danh sách nhân viên
+        đối soát cung cấp và đến trạm thu lại tiền mặt từ NV đối soát.<br />
+        Sau khi tiền vào TKGT nhân viên đối soát thực hiện tạo ngay GD OTC ghi
+        nhận doanh thu cho CĐT
+      </td>
+      <td class="border p-2">
+        Không thực tế tại hiện trương. Sử dụng phướng án Hỗ trợ hướng dẫn khách
+        hàng nạp tiền vào TKGT để tạo OTC
+      </td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">3</td>
+      <td class="border p-2">Thẻ của KH bị khóa khi qua trạm</td>
+      <td class="border p-2">
+        - Trạm vào: Yêu cầu KH mở khóa mới cho vào Cao tốc<br />
+        - Trạm ra:<br />
+        * Nếu KH chủ động mở lại thẻ -˃ thực hiện trừ OTC<br />
+        * Nếu KH không chủ động mở thẻ thì thực hiện lập BB và thu tiền mặt đúng
+        số tiền bằng mệnh giá khách hàng phải trả cho lộ trình tương ứng, đồng
+        thời trả cho khách hàng phiếu thu thể hiện đúng nội dung BKS số tiền thu
+        của KH và trả cho KH.<br />
+        - Ghi nhận lại thông tin thu tiền mặt vào sổ nhật ký vận hành, cuối ca
+        nộp tiền về cho NV Đối soát<br />
+        - NV đối soát lập biên bản thu tiền mặt theo mẫu “ BM.09-BCCT xe qua
+        tram thu tiền mặt” trong quá trình đối soát và chuyển tiền ( Đính kèm)
+        đồng thời gửi danh sách thu tiền mặt cho đầu mối phụ trách kinh doanh
+        thu/nộp tiền của tầng tuyến. Đầu mối phụ trách kinh doanh thu/nộp tiền
+        của từng tuyến sẽ thực hiện nộp tiền vào TKGT theo danh sách nhân viên
+        đối soát cung cấp và đến trạm thu lại tiền mặt từ NV đối soát.<br />
+        Sau khi tiền vào TKGT nhân viên đối soát thực hiện tạo ngay GD OTC ghi
+        nhận doanh thu cho CĐT<br />
+        - Đối với thẻ Epass sau khi NVKD nạp tiền sẽ báo với Ms Tamnt để mở khóa
+        thẻ Epass sau khi mở khóa thực hiện trừ OTC ghi nhận doanh thu cho CDT
+      </td>
+      <td class="border p-2"></td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">4</td>
+      <td class="border p-2">
+        Xe hư hỏng nặng (không có TKGT) được kéo theo bởi 01 xe kéo chở xe(không
+        phải xe cứu hộ chuyên dùng
+      </td>
+      <td class="border p-2">- Xe kéo chở xe sẽ bị trừ phí e lần</td>
+      <td class="border p-2">Không thực tế tại hiện trường</td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">5</td>
+      <td class="border p-2">
+        Xe không thể dán thẻ (vd: Xe cẩu Kato) nhưng vẫn đi vào cao tốc
+      </td>
+      <td class="border p-2">Không cho xe không dán thẻ đi vào cao tốc</td>
+      <td class="border p-2">Không thực tế áp dụng tại hiện trường</td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">6</td>
+      <td class="border p-2">Xe dùng biển tạm</td>
+      <td class="border p-2">
+        Đề nghị KH lắp biển chính thức thì liên hệ với VETC để cập nhật lại BKS
+        trên hệ thống
+      </td>
+      <td class="border p-2"></td>
+    </tr>
+
+    <tr>
+      <td class="border p-2">7</td>
+      <td class="border p-2">Xe đổi biển số xe</td>
+      <td class="border p-2">
+        - Trên xe có thẻ Etag: thực hiện kiểm tra lại thông tin biển số xe cũ KH
+        cung cấp, tra cứu biển số xe trên 360.vetc.com.vn so sánh mã etag ghi
+        nhận trên 360.vetc.com.vn với mã etag dán trên xe<br />
+        * Nếu trùng khớp: Chụp lại đăng ký hoặc đăng kiểm mới của KH, chuyển cho
+        đầu mối Phụ trách kinh doanh tại tuyến đổi biển kiểm soát cho KH trên hệ
+        thống. Ghi nhật ký vận hành và thực hiện trừ OTC.<br />
+        * Nếu không trùng khớp -> nghi ngờ KH dùng biển giã-> TB C08 xử lý<br />
+        ( Không có C08 thì lập biên bản thu tiền mặt. Chụp lại mã Etag trên xe,
+        ghi lại nhật ký hậu kiểm và thực hiện giống trường hợp 3. Từ mã thẻ etag
+        trên 360.vetc.com.vn sẽ ra thông tin của KH để trừ OTC.<br />
+        - Trường hợp trên xe không có thẻ Etag: thực hiện giống trường hợp 1
+      </td>
+      <td class="border p-2"></td>
+    </tr>
+  </tbody>
+</table>

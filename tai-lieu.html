@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tài liệu vận hành ETC</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        font-family: system-ui;
+      }
+
+      .menu-item {
+        transition: all 0.2s;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- HEADER -->
+    <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
+      <div class="text-lg md:text-xl font-bold">Tài liệu vận hành ETC</div>
+
+      <button onclick="toggleSidebar()" class="md:hidden text-2xl">☰</button>
+    </div>
+
+    <div class="flex h-[calc(100vh-64px)]">
+      <!-- overlay -->
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-40 hidden z-20 md:hidden"
+        onclick="toggleSidebar()"
+      ></div>
+
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed md:static z-30 top-0 left-0 h-full w-72 bg-white border-r transform -translate-x-full md:translate-x-0 transition-transform duration-300 overflow-y-auto"
+      >
+        <div class="p-4 font-bold border-b">Mục lục</div>
+
+        <ul class="text-sm">
+          <li
+            class="menu-item p-3 hover:bg-gray-100 cursor-pointer"
+            onclick="loadDoc('page-docs/mucdich.html', this)"
+          >
+            Mục đích và phạm vi áp dụng
+          </li>
+
+          <li
+            class="menu-item p-3 hover:bg-gray-100 cursor-pointer"
+            onclick="loadDoc('page-docs/vanban.html', this)"
+          >
+            Văn bản pháp luật
+          </li>
+
+          <li
+            class="menu-item p-3 hover:bg-gray-100 cursor-pointer"
+            onclick="loadDoc('page-docs/chuong1.html', this)"
+          >
+            Chương I - Quy trình vận hành ETC
+          </li>
+
+          <li
+            class="menu-item p-3 hover:bg-gray-100 cursor-pointer"
+            onclick="loadDoc('page-docs/chuong2.html', this)"
+          >
+            Chương II - Nghiệp vụ vận hành
+          </li>
+
+          <li
+            class="menu-item p-3 hover:bg-gray-100 cursor-pointer"
+            onclick="loadDoc('page-docs/chuong3.html', this)"
+          >
+            Chương III - Bộ phận kỹ thuật
+          </li>
+        </ul>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex-1 p-4 md:p-8 overflow-y-auto">
+        <!-- SEARCH -->
+        <div class="mb-4">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="🔎 Tìm kiếm trong tài liệu... (sẽ highlight các chữ bạn đang tìm)"
+            class="w-full border p-3 rounded shadow-sm"
+          />
+        </div>
+
+        <div id="content" class="bg-white p-4 md:p-6 rounded shadow">
+          <h2 class="text-lg md:text-xl font-bold mb-4">
+            Chọn mục lục bên trái để xem tài liệu
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let originalContent = "";
+      let results = [];
+      let currentIndex = 0;
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        sidebar.classList.toggle("-translate-x-full");
+        overlay.classList.toggle("hidden");
+      }
+
+      async function loadDoc(file, element) {
+        document.querySelectorAll(".menu-item").forEach((item) => {
+          item.classList.remove(
+            "bg-blue-100",
+            "text-blue-600",
+            "font-semibold",
+          );
+        });
+
+        element.classList.add("bg-blue-100", "text-blue-600", "font-semibold");
+
+        const res = await fetch(file);
+        const html = await res.text();
+
+        document.getElementById("content").innerHTML = html;
+
+        originalContent = html;
+
+        document.getElementById("searchInput").value = "";
+        results = [];
+        currentIndex = 0;
+
+        if (window.innerWidth < 768) {
+          toggleSidebar();
+        }
+      }
+
+      function searchContent() {
+        const keyword = document.getElementById("searchInput").value.trim();
+
+        const content = document.getElementById("content");
+
+        if (keyword === "") {
+          content.innerHTML = originalContent;
+          return;
+        }
+
+        const regex = new RegExp(`(${keyword})`, "gi");
+
+        content.innerHTML = originalContent.replace(
+          regex,
+          '<mark class="search">$1</mark>',
+        );
+
+        results = document.querySelectorAll(".search");
+
+        currentIndex = 0;
+
+        if (results.length > 0) {
+          results[0].scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", searchContent);
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            if (results.length === 0) return;
+
+            currentIndex++;
+
+            if (currentIndex >= results.length) {
+              currentIndex = 0;
+            }
+
+            results[currentIndex].scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }
+        });
+
+      window.onload = () => {
+        const first = document.querySelector(".menu-item");
+        loadDoc("page-docs/mucdich.html", first);
+      };
+    </script>
+  </body>
+</html>
