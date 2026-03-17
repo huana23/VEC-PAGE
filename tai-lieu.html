@@ -95,7 +95,7 @@
 
       <!-- CONTENT -->
 
-      <div class="flex-1 p-4 md:p-8 overflow-y-auto">
+      <div id="contentWrapper" class="flex-1 p-4 md:p-8 overflow-y-auto">
         <!-- SEARCH BAR -->
 
         <div
@@ -210,14 +210,19 @@
         if (results.length > 0) {
           results[currentIndex].classList.add("active");
 
-          const yOffset = -100; // chỉnh theo chiều cao search bar
-          const y =
-            results[currentIndex].getBoundingClientRect().top +
-            window.pageYOffset +
-            yOffset;
+          const container = document.getElementById("contentWrapper");
+          const element = results[currentIndex];
 
-          window.scrollTo({
-            top: y,
+          const containerRect = container.getBoundingClientRect();
+          const elementRect = element.getBoundingClientRect();
+
+          const offset = 120;
+
+          const scrollTop =
+            elementRect.top - containerRect.top + container.scrollTop - offset;
+
+          container.scrollTo({
+            top: scrollTop,
             behavior: "smooth",
           });
         }
